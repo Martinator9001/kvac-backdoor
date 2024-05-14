@@ -70,12 +70,13 @@ beautifying it a bit we get this
 
 
 ## 3. Payload explanation
-The scripts seem to grab all relevant info like licenses, IPs, identifiers from the players in your server, and also stealing API keys from the server .cfg
-It also overrides the `chatMessage` event
-It grants the resource the infected script was ran from permissions in the server.cfg - and therefore txAdmin
+The scripts steals player info like licenses, IPs, identifiers, and also reads the server .cfg, extracting API keys and the rcon password if you have one. <br>
+It also overrides the `chatMessage` event and grants the resource the infected script was ran from permissions in the server.cfg - and therefore txAdmin. <br>
 
 
 ## 4. Post-infection measures
-It is highly recommended to shutdown the server as soon as the backdoor is installed, as by default it doesn't inject itself outside the OS and only in the former 3 locations.
-Then reseting any API keys you have put in your server.cfg (like steam, rcon passwords)
-Then reinstalling your chat script, deleting the malicious code from your resource and remove the command access granted in the last lines of the server.cfg.
+It is highly recommended to shutdown the server as soon as the backdoor is installed, as by default it doesn't inject itself outside the server (e.g. the OS) and only in the former 3 locations.
+You should reset any API keys and other sensitive information you have put in your server.cfg (like steam API keys, rcon passwords)
+Then you should reinstal; your chat script, deleting the malicious code from your resource and remove the command access granted in the last lines of the server.cfg.<br>
+Unfortunately I can't help if the server's been manually accessed by an adversary after the backdoor was installed, as they could've injected code anywhere and it could be practically impossible. Your safest course of action is reinstalling the VPS the server was installed on and using a backup of your server. If you're willing to risk it you can search for suspicious HttpRequest using `grep` or VSCode's Explorer's find but the code can be obfuscated and it's very difficult to find then.
+The lesson is - backups are your friend.
