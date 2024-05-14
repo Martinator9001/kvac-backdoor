@@ -43,8 +43,7 @@ Enchanced_Tabs[10](str_utf8(), function (e, d)
 end)
 ```
 ## 2. Code analysis and finding the full payload
-If that looks familiar, that's because it's the same code (with the link changed of course) used by the cipher panel backdoor - 
-I'd recommend reading it before continuing one, though I will explain briefly how the code works
+As we can see, that is almost the same code that is used by the cipher panel backdoor - 
 In-short the `random_char` table is a link, which gets interpreted by `str_utf8()` which runs as an http request on the server, giving access to it.
 Running the code without the last codeblock (which if you look at the `Enchanced_Tabs` table is an http request) in any lua compiler (https://onecompiler.com/lua/42d7ex7dx)
 and appending `print(str_utf8)` to it, so we can see what the encoded message is, gives us this link - https://fivem.kvac.cz/f.php?key=ojoTJZWePRnPKYUpA6z4.
