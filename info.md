@@ -1,5 +1,5 @@
 ## 1. Introduction
-KVacDoor is a really used fivem and garry's mod server manager, boasting features such as 
+KVacDoor is a really used FiveM and Garry's Mod server manager, boasting features such as 
 
 > **Lua Script**
 The scripting system allows you or the KVacDoor staff to quickly run lua code on your servers.
