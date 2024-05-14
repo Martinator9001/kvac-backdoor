@@ -1,10 +1,10 @@
 ## 1. Introduction
 KVacDoor is a really used FiveM and Garry's Mod server manager, boasting features such as 
 
-> **Lua Script**
+> **Lua Script**<br>
 The scripting system allows you or the KVacDoor staff to quickly run lua code on your servers.
 
-> **Smart Lua**
+> **Smart Lua**<br>
 Inject your lua codes discreetly in one click in one of your addons with the Smart Lua tool.
 
 The panel's website: https://kvacdoor.cz
