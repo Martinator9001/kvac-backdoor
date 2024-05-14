@@ -40,7 +40,7 @@ Enchanced_Tabs[10](str_utf8(), function (e, d)
     s()
 end)
 ```
-2. Code analysis and finding the full payload
+## 2. Code analysis and finding the full payload
 If that looks familiar, that's because it's the same code (with the link changed of course) used by the cipher panel backdoor - 
 I'd recommend reading it before continuing one, though I will explain briefly how the code works
 In-short the `random_char` table is a link, which gets interpreted by `str_utf8()` which runs as an http request on the server, giving access to it.
@@ -68,13 +68,13 @@ beautifying it a bit we get this
 [fivem-beautified payload.lua](https://github.com/Martinator9001/kvac-backdoor/blob/main/fivem-beautified-payload.lua)
 
 
-##3. Payload explanation
+## 3. Payload explanation
 The scripts seem to grab all relevant info like licenses, IPs, identifiers from the players in your server, and also stealing API keys from the server .cfg
 It also overrides the `chatMessage` event
 It grants the resource the infected script was ran from permissions in the server.cfg - and therefore txAdmin
 
 
-##4. Post-infection measures
+## 4. Post-infection measures
 It is highly recommended to shutdown the server as soon as the backdoor is installed, as by default it doesn't inject itself outside the OS and only in the former 3 locations.
 Then reseting any API keys you have put in your server.cfg (like steam, rcon passwords)
 Then reinstalling your chat script, deleting the malicious code from your resource and remove the command access granted in the last lines of the server.cfg.
