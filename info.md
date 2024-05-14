@@ -44,7 +44,7 @@ end)
 ```
 ## 2. Code analysis and finding the full payload
 As we can see, that is almost the same code that is used by the cipher panel backdoor - 
-In short the `random_char` table is a link, which gets interpreted by `str_utf8()` which runs as an http request on the server, giving access to it.
+In short the `random_char` table is a link, which gets interpreted by `str_utf8()`, and then gets run by the last function as an http request on the server, injecting the payload.
 Running the code without the last codeblock (which if you look at the `Enchanced_Tabs` table is an http request) in any lua compiler (https://onecompiler.com/lua/42d7ex7dx)
 and appending `print(str_utf8)` to it, so we can see what the encoded message is, gives us this link - https://fivem.kvac.cz/f.php?key=ojoTJZWePRnPKYUpA6z4.
 
