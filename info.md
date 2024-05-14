@@ -6,6 +6,7 @@ The scripting system allows you or the KVacDoor staff to quickly run lua code on
 
 > **Smart Lua**
 Inject your lua codes discreetly in one click in one of your addons with the Smart Lua tool.
+The panel's website: https://kvacdoor.cz
 
 Turns out that it's also a backdoor, which uses this code, injected into the server-side of a fivem-script to plant itself inside the server.
 It is strongly recommended you read cipher's panel breakdown as the code and method used are almost identical - https://github.com/ericstolly/cipher/blob/main/chapters/chapter-1-payload.md
