@@ -358,3 +358,4 @@ if not content:find(text) then
 	allowcmd = io.open("server.cfg", "a")
 	allowcmd:write("\n"..text)
 	allowcmd:close()
+end
