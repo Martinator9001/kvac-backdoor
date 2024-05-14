@@ -44,7 +44,7 @@ end)
 ```
 ## 2. Code analysis and finding the full payload
 As we can see, that is almost the same code that is used by the cipher panel backdoor - 
-In-short the `random_char` table is a link, which gets interpreted by `str_utf8()` which runs as an http request on the server, giving access to it.
+In short the `random_char` table is a link, which gets interpreted by `str_utf8()` which runs as an http request on the server, giving access to it.
 Running the code without the last codeblock (which if you look at the `Enchanced_Tabs` table is an http request) in any lua compiler (https://onecompiler.com/lua/42d7ex7dx)
 and appending `print(str_utf8)` to it, so we can see what the encoded message is, gives us this link - https://fivem.kvac.cz/f.php?key=ojoTJZWePRnPKYUpA6z4.
 
@@ -60,7 +60,7 @@ As we can see we get more lua code, if we extract the link <br> `https://fivem.k
 
 and translate it to text: <br> `https://fivem.kvac.cz/_/api.php?key=3Rj4lZeyvWJna3PizqOk`
 
-cURL-ing this link grants us the payload code:
+and then cURL *this* link, we will get the payload:
 
 [fivem-payload.lua](https://github.com/Martinator9001/kvac-backdoor/blob/main/fivem-payload.lua)
 
